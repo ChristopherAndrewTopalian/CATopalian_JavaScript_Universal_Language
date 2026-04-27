@@ -1,5 +1,5 @@
 # CATopalian JavaScript Universal Language
-Universal JavaScript to refelect the universal language style of Christopher Andrew Topalian.
+Universal JavaScript to reflect the universal language style of Christopher Andrew Topalian.
 
 ---
 
