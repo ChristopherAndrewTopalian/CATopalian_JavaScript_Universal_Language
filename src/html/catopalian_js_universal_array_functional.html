@@ -1,0 +1,228 @@
+<!-- Dedicated to God the Father -->
+<!-- All Rights Reserved Christopher Andrew Topalian Copyright 2000-2026 -->
+<!-- https://github.com/ChristopherTopalian -->
+<!-- https://github.com/ChristopherAndrewTopalian -->
+<!-- catopalian_js_universal_array_functional.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> catopalian js universal array functional </title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="src/media/textures/icons/CATopalian_True_AI_Centered.png" type="image/png">
+
+<link rel="stylesheet" href="../../src/css/style001.css">
+
+<script src="../../src/js/colorer/catopalian_javascript_universal_code_colorer.js"></script>
+
+<script src="../../src/js/sound/sound.js"></script>
+
+<script>
+
+// SHORTCUTS
+
+function ge(whichId)
+{
+    let result = document.getElementById(whichId);
+    return result;
+}
+
+function ce(whichType)
+{
+    let result = document.createElement(whichType);
+    return result;
+}
+
+function ba(whichElement)
+{
+    let result = document.body.append(whichElement);
+    return result;
+}
+
+function cl(whichMessage)
+{
+    let result = console.log(whichMessage);
+    return result;
+}
+
+//----//
+
+function copyToClipboard(elementId)
+{
+    let codeText = ge(elementId).innerText;
+
+    navigator.clipboard.writeText(codeText)
+        .then(function()
+        {
+            cl("Data transmission copied to clipboard.");
+        })
+        .catch(function(error)
+        {
+            console.error("Transmission failed: ", error);
+        });
+}
+
+//----//
+
+// INTERFACE BUILDER
+function makeInterface()
+{
+    let mainContainer = ce('div');
+    mainContainer.style.padding = '4px';
+    mainContainer.style.fontFamily = 'Arial';
+    ba(mainContainer);
+
+    //-//
+
+    // Title & GitHub Link
+    let titleAndLink = ce('a');
+    titleAndLink.href = 'https://github.com/ChristopherAndrewTopalian/CATopalian_JavaScript_Universal_Language';
+    titleAndLink.target = '_blank';
+    titleAndLink.style.fontWeight = 'bold';
+    titleAndLink.textContent = 'CATopalian JavaScript Universal Language';
+    titleAndLink.style.fontSize = '24px';
+    titleAndLink.style.textDecoration = 'none';
+    titleAndLink.style.color = 'rgb(0, 255, 255)';
+    mainContainer.append(titleAndLink);
+
+    //-//
+
+    mainContainer.append(ce('hr'));
+
+    //-//
+
+    // Introduction Text
+    let introWrapper = ce('div');
+    introWrapper.style.color = 'rgb(200, 200, 200)';
+    introWrapper.innerHTML = `
+        <h2> Universal Array Operations </h2>
+        <p> Standardizing array manipulation by replacing legacy hardware metaphors (push/pop/shift/unshift) with clear, directional logic. </p>
+    `;
+    mainContainer.append(introWrapper);
+
+    //-//
+
+    // Raw File Download Link
+    let rawLink = ce('a');
+    rawLink.href = '../../src/js/universal/catopalian_js_universal_array_functional.js';
+    rawLink.target = '_blank';
+    rawLink.textContent = 'View / Download Raw File';
+    rawLink.style.color = 'yellow';
+    rawLink.style.display = 'block';
+    rawLink.style.marginBottom = '0px';
+    mainContainer.append(rawLink);
+
+    //-//
+
+    // The Code
+    let codeWrapper = ce('div');
+    codeWrapper.innerHTML = `
+    <pre>
+    <code class="custom-code" data-language="js" id="universalArrayCode">// UNIVERSAL ARRAY OPERATIONS
+
+// Replaces array.push(item)
+function addToEnd(targetArray, itemToAdd)
+{
+    targetArray.push(itemToAdd);
+    return targetArray;
+}
+
+// Replaces array.pop()
+function removeLast(targetArray)
+{
+    let removedItem = targetArray.pop();
+    return removedItem;
+}
+
+// Replaces array.unshift(item)
+function addToStart(targetArray, itemToAdd)
+{
+    targetArray.unshift(itemToAdd);
+    return targetArray;
+}
+
+// Replaces array.shift()
+function removeFirst(targetArray)
+{
+    let removedItem = targetArray.shift();
+    return removedItem;
+}
+
+//----//
+
+// EXAMPLE:
+
+// Initialize the Starfleet array
+let fleet = ["Enterprise", "Voyager"];
+
+// Add a ship to the rear guard (push)
+addToEnd(fleet, "Cerritos");
+console.log(fleet); // ["Enterprise", "Voyager", "Cerritos"]
+
+// Add a ship to the vanguard (unshift)
+addToStart(fleet, "Defiant");
+console.log(fleet); // ["Defiant", "Enterprise", "Voyager", "Cerritos"]
+
+// Remove the vanguard ship (shift)
+let firstShip = removeFirst(fleet);
+console.log(firstShip); // "Defiant"
+console.log(fleet);     // ["Enterprise", "Voyager", "Cerritos"]
+
+// Remove the rear guard ship (pop)
+let lastShip = removeLast(fleet);
+console.log(lastShip); // "Cerritos"
+console.log(fleet);    // ["Enterprise", "Voyager"]</code></pre>`;
+
+    mainContainer.append(codeWrapper);
+
+    //-//
+
+    // Copy Button
+    let copyBtn = ce('button');
+    copyBtn.textContent = 'Copy Code';
+    copyBtn.style.marginTop = '5px';
+    copyBtn.style.padding = '10px 15px';
+    copyBtn.style.backgroundColor = 'rgb(50, 50, 50)';
+    copyBtn.style.color = 'cyan';
+    copyBtn.style.border = '1px solid cyan';
+    copyBtn.style.cursor = 'pointer';
+    copyBtn.onclick = function()
+    { 
+        clickSound();
+        copyToClipboard('universalArrayCode'); 
+    };
+    mainContainer.append(copyBtn);
+}
+
+//----//
+
+// BOOT SEQUENCE
+function whenLoaded()
+{
+    makeInterface();
+
+    // safely fire the colorer only after the interface is built
+    if (typeof applyCustomHighlighting === 'function')
+    {
+        applyCustomHighlighting();
+    }
+    else
+    {
+        cl("Notice: Custom colorer script not found or loaded.");
+    }
+}
+
+</script>
+
+</head>
+
+<body onload="whenLoaded();">
+
+</body>
+
+</html>
+
