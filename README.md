@@ -5,6 +5,8 @@ Universal JavaScript to reflect the universal language style of Christopher Andr
 
 Use App: https://christopherandrewtopalian.github.io/CATopalian_JavaScript_Universal_Language/CATopalian_JavaScript_Universal_Language.html
 
+Video: https://www.youtube.com/watch?v=EDaYxYiWTVw
+
 ![001](src/media/textures/screenshots/001.png)
 
 ![002](src/media/textures/screenshots/002.png)
